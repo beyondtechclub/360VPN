@@ -1,0 +1,109 @@
+<resources>
+    <string name="app_name">360 VPN</string>
+    <string name="no_vpn_connected">کوئی وپن کنیکٹیڈ نہیں</string>
+    <string name="prompt_spinner">مقام منتخب کریں</string>
+    <string name="connect">جڑیں</string>
+    <string name="disconnect">ڈسکنیکٹ</string>
+
+    <string name="connected">کنیکٹیڈ</string>
+    <string name="disconnected">ڈسکوننیکٹڈ</string>
+    <string name="select_vpn_location">وہ علاقہ منتخب کریں جس سے آپ رابطہ کرنا چاہتے ہیں</string>
+    <string name="facebook_app_id">2146300222353523</string>
+
+    <string name="search">علاقے کے لئے یہاں تلاش کریں </string>
+    <string name="title_activity_navigation">نیویگیشن ایکٹیویٹی</string>
+    <string name="navigation_drawer_open">نیویگیشن دراز کھولیں</string>
+    <string name="navigation_drawer_close">نیویگیشن دراز کو بند کریں</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">نیویگیشن ہیڈر</string>
+    <string name="action_settings">ترتیبات</string>
+
+    <string name="menu_home">Hideme</string>
+    <string name="menu_gallery">گیلری</string>
+    <string name="menu_slideshow">سلائیڈ شو</string>
+    <string name="menu_tools">اوزار</string>
+    <string name="menu_share">بانٹیں</string>
+    <string name="menu_send">بھیجیں</string>
+    <string name="privacy">رازداری</string>
+    <string name="rate">شرح</string>
+    <string name="home">360 VPN</string>
+
+    <string name="drawer_open">نیویگیشن دراز کھولیں</string>
+    <string name="drawer_close">نیویگیشن دراز کو بند کریں</string>
+    <string name="logo_inapp_link">https://github.com/librespeed/speedtest-android</string>
+
+    <string name="privacy_policy">file:///android_asset/privacy_en.html</string>
+
+
+    <string name="init_init">لوڈ ہو رہا ہے</string>
+    <string name="initFail_configError">ترتیب میں خرابی</string>
+    <string name="initFail_retry">دوبارہ کوشش کریں</string>
+    <string name="init_selecting">سرور کا انتخاب</string>
+    <string name="initFail_noServers">لکوئی سرور دستیاب نہیں ہے</string>
+    <string name="serverSelect_message">سرور منتخب کریں</string>
+    <string name="start">شروط</string>
+    <string name="test_dl">ڈونلوڈ</string>
+    <string name="test_ul">اپلوڈ</string>
+    <string name="test_speedMeasure">Mbps</string>
+    <string name="test_ping">پنگ</string>
+    <string name="test_jitter">جیتر</string>
+    <string name="test_timeMeasure">ms</string>
+    <string name="test_share">اشتراک کا نتیجہ</string>
+    <string name="test_restart">نیا امتحان</string>
+    <string name="testFail_err">خرابی واقع ہوئی</string>
+    <string name="testFail_retry">دوبارہ کوشش کریں</string>
+    <string name="privacy_open"><u>پروکے</u></string>
+    <string name="privacy_close"><u>پیچھے</u></string>
+    <string name="speed_test">سپیڈ ٹیسٹ</string>
+
+
+    <string name="lang">زبان</string>
+    <string name="auto_connect_to_fastest_server">سب سے تیز سرور سے جڑیں</string>
+    <string name="begin_test_speedtest">ٹیسٹ شروع کرو</string>
+    <string name="download_speedtest">ڈاؤن لوڈ کریں</string>
+    <string name="upload_speedtest">اپ لوڈ کریں</string>
+    <string name="downloadspeed_speedtest">0 Mbps</string>
+    <string name="uploadspeed_speedtest">0 Mbps</string>
+    <string name="ping_speedtest">پنگ</string>
+    <string name="app_by_inceptial">APP BY INCEPTIAL</string>
+    <string name="test_country">test</string>
+    <string name="austrailia_country">آسٹریلیا</string>
+    <string name="canada_country">کینیڈا</string>
+    <string name="dubai_country">دبئی</string>
+    <string name="england_country">انگلینڈ</string>
+    <string name="france_country">فرانس</string>
+    <string name="germany_country">جرمنی</string>
+    <string name="hongkong_country">ہانگ کانگ</string>
+    <string name="india_country">ہندوستان</string>
+    <string name="ireland_country">آئرلینڈ</string>
+    <string name="italy_country">اٹلی</string>
+    <string name="japan_country">جاپان</string>
+    <string name="netherlands_country">نیدرلینڈز</string>
+    <string name="russia_country">روس</string>
+    <string name="singapore_country">سنگاپور</string>
+    <string name="southafrica_country">جنوبی افریقہ</string>
+    <string name="southkorea_country">جنوبی کوریا</string>
+    <string name="usa_country">امریکا</string>
+    <string name="or_text">اور</string>
+    <string name="autoconnect_button">سب سے تیز سرور سے <جڑیں></جڑیں></string>
+
+    <string name="rate_us_title">ہمیں درجہ دیں</string>
+    <string name="rateus_message">اگر آپ ایپ کو استعمال کرنے سے لطف اندوز ہوتے ہیں تو ، کیا آپ اسٹور پر اس کی درجہ بندی کرنے میں ایک لمحے کا وقت لگائیں گے؟</string>
+    <string name="rateus_yes">جی ہاں</string>
+    <string name="rateus_later">بعد میں</string>
+    <string name="defauldialog_title">ڈیفالٹ علاقہ</string>
+    <string name="default_message">آپ اسے اپنے پہلے سے طے شدہ علاقے کے طور پر متعین کرنا چاہتے ہیں۔</string>
+    <string name="default_yes">جی ہاں</string>
+    <string name="default_no">نہیں</string>
+    <string name="reward_title">انلاک علاقہ</string>
+    <string name="reward_message">اشتہار دیکھ کر 24 گھنٹوں کیلئے علاقہ انلاک کریں۔</string>
+    <string name="reward_yes">جی ہاں</string>
+    <string name="reward_no">نہیں</string>
+    <string name="default_make">پہلے سے طے شدہ</string>
+    <string name="make_default">پہلے سے طے شدہ بنائیں</string>
+    <string name="camera_scanner">کیمرا اسکینر</string>
+    <string name="secure_gallery">محفوظ گیلری</string>
+    <string name="aman_2fa">اماں: 2 ایف اے</string>
+    <string name="our_other_apps">ہماری دوسری ایپس</string>
+</resources>

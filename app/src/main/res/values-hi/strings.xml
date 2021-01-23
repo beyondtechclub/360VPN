@@ -1,0 +1,107 @@
+<resources>
+    <string name="app_name">360 VPN</string>
+    <string name="no_vpn_connected">विपीन की स्तिथि : जुड़े नहीं हैं</string>
+    <string name="prompt_spinner">स्थान चुनिए </string>
+    <string name="connect">कनेक्ट</string>
+    <string name="disconnect">डिस्कनेक्ट</string>
+
+    <string name="connected">कनेक्टेड  </string>
+    <string name="disconnected">डिस्कनेक्टेड </string>
+    <string name="select_vpn_location">जिस क्षेत्र से आप जुड़ना चाहते है वह चुनिए </string>
+    <string name="facebook_app_id">2146300222353523</string>
+
+    <string name="search">क्षेत्र के लिए यहाँ खोजें....</string>
+    <string name="title_activity_navigation">नेविगेशन गतिविधि</string>
+    <string name="navigation_drawer_open">नेविगेशन दराज खोलें</string>
+    <string name="navigation_drawer_close">नेविगेशन ड्रॉअर बंद करें</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">नेविगेशन हैडर</string>
+    <string name="action_settings">समायोजन</string>
+
+    <string name="menu_home">HideMe</string>
+    <string name="menu_gallery">गेलरी</string>
+    <string name="menu_slideshow">स्लाइड शो</string>
+    <string name="menu_tools">उपकरण</string>
+    <string name="menu_share">शेयर</string>
+    <string name="menu_send">सेंड</string>
+    <string name="privacy">प्राइवेसी</string>
+    <string name="rate">मूल्यांकन करें</string>
+    <string name="home">360 VPN</string>
+
+    <string name="drawer_open">नेविगेशन दराज खोलें</string>
+    <string name="drawer_close">नेविगेशन ड्रॉअर बंद करें</string>
+    <string name="logo_inapp_link">https://github.com/librespeed/speedtest-android</string>
+
+    <string name="privacy_policy">file:///android_asset/privacy_en.html</string>
+
+
+    <string name="init_init">लोडिंग </string>
+    <string name="initFail_configError">विन्यास त्रुटि</string>
+    <string name="initFail_retry">पुन: प्रयास करें</string>
+    <string name="init_selecting">सर्वर चुनिए </string>
+    <string name="initFail_noServers">कोई सर्वर उपलब्ध नहीं है </string>
+    <string name="serverSelect_message">सर्वर चुनिए</string>
+    <string name="start">शुरू</string>
+    <string name="test_dl">डाउनलोड</string>
+    <string name="test_ul">अपलोड </string>
+    <string name="test_speedMeasure">एम.बी.पी.एस </string>
+    <string name="test_ping">पिंग </string>
+    <string name="test_jitter">जिटर </string>
+    <string name="test_timeMeasure">म.स </string>
+    <string name="test_share">रिजल्ट शेयर करें </string>
+    <string name="test_restart">नया परीक्षण</string>
+    <string name="testFail_err">एक त्रुटि पाई गई</string>
+    <string name="testFail_retry">फिर से प्रयास करें </string>
+    <string name="privacy_open"><u>प्राइवेसी</u></string>
+    <string name="privacy_close"><u>वापस</u></string>
+    <string name="speed_test">स्पीड टेस्ट  </string>
+    <string name="lang">भाषा</string>
+    <string name="auto_connect_to_fastest_server">सबसे तेज़ सर्वर से ऑटो कनेक्ट</string>
+    <string name="begin_test_speedtest">जांच शुरू करें</string>
+    <string name="download_speedtest">डाउनलोड</string>
+    <string name="upload_speedtest">डालना</string>
+    <string name="downloadspeed_speedtest">0 Mbps</string>
+    <string name="uploadspeed_speedtest">0 Mbps</string>
+    <string name="ping_speedtest">पिंग</string>
+    <string name="app_by_inceptial">APP BY INCEPTIAL</string>
+    <string name="test_country">test</string>
+    <string name="austrailia_country">ऑस्ट्रेलिया</string>
+    <string name="canada_country">कनाडा</string>
+    <string name="dubai_country">दुबई</string>
+    <string name="england_country">इंगलैंड</string>
+    <string name="france_country">फ्रांस</string>
+    <string name="germany_country">जर्मनी</string>
+    <string name="hongkong_country">हॉगकॉग</string>
+    <string name="india_country">भारत</string>
+    <string name="ireland_country">आयरलैंड</string>
+    <string name="italy_country">इटली</string>
+    <string name="japan_country">जापान</string>
+    <string name="netherlands_country">नीदरलैंड</string>
+    <string name="russia_country">रूस</string>
+    <string name="singapore_country">सिंगापुर</string>
+    <string name="southafrica_country">दक्षिण अफ्रीका</string>
+    <string name="southkorea_country">दक्षिण कोरिया</string>
+    <string name="usa_country">अमेरीका</string>
+    <string name="or_text">या</string>
+    <string name="autoconnect_button">सबसे तेज़ सर्वर से कनेक्ट करें</string>
+
+    <string name="rate_us_title">हमें रेटिंग दें</string>
+    <string name="rateus_message">यदि आप एप्लिकेशन का उपयोग करने का आनंद लेते हैं, तो क्या आप स्टोर पर इसे रेट करने में एक पल का समय लेंगे?</string>
+    <string name="rateus_yes">हाँ</string>
+    <string name="rateus_later">बाद में</string>
+    <string name="defauldialog_title">डिफ़ॉल्ट क्षेत्र</string>
+    <string name="default_message">आप इसे अपने डिफ़ॉल्ट क्षेत्र के रूप में सेट करना चाहते हैं।</string>
+    <string name="default_yes">हाँ</string>
+    <string name="default_no">नहीं</string>
+    <string name="reward_title">क्षेत्र अनलॉक करें</string>
+    <string name="reward_message">विज्ञापन देखकर 24 घंटे के लिए क्षेत्र अनलॉक करें।</string>
+    <string name="reward_yes">हाँ</string>
+    <string name="reward_no">नहीं</string>
+    <string name="default_make">डिफ़ॉल्ट बनाना</string>
+    <string name="make_default">डिफ़ॉल्ट</string>
+    <string name="camera_scanner">कैमरा स्कैनर</string>
+    <string name="secure_gallery">सुरक्षित गैलरी</string>
+    <string name="aman_2fa">अमन: 2 एफए</string>
+    <string name="our_other_apps">हमारे अन्य एप्लिकेशन</string>
+</resources>

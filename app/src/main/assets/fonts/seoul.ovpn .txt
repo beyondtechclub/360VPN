@@ -1,0 +1,311 @@
+##############################################
+# Sample client-side OpenVPN 2.0 config file #
+# for connecting to multi-client server.     #
+#                                            #
+# This configuration can be used by multiple #
+# clients, however each client should have   #
+# its own cert and key files.                #
+#                                            #
+# On Windows, you might want to rename this  #
+# file so it has a .ovpn extension           #
+##############################################
+
+# Specify that we are a client and that we
+# will be pulling certain config file directives
+# from the server.
+client
+
+# Use the same setting as you are using on
+# the server.
+# On most systems, the VPN will not function
+# unless you partially or fully disable
+# the firewall for the TUN/TAP interface.
+;dev tap
+dev tun
+
+# Windows needs the TAP-Win32 adapter name
+# from the Network Connections panel
+# if you have more than one.  On XP SP2,
+# you may need to disable the firewall
+# for the TAP adapter.
+;dev-node MyTap
+
+# Are we connecting to a TCP or
+# UDP server?  Use the same setting as
+# on the server.
+;proto tcp
+proto udp
+
+# The hostname/IP and port of the server.
+# You can have multiple remote entries
+# to load balance between the servers.
+remote 13.209.111.151 1194
+;remote 13.209.111.151 443
+
+# Choose a random host from the remote
+# list for load-balancing.  Otherwise
+# try hosts in the order specified.
+;remote-random
+
+# Keep trying indefinitely to resolve the
+# host name of the OpenVPN server.  Very useful
+# on machines which are not permanently connected
+# to the internet such as laptops.
+#resolv-retry infinite
+
+# Most clients don't need to bind to
+# a specific local port number.
+nobind
+
+# Downgrade privileges after initialization (non-Windows only)
+user nobody
+group nogroup
+
+# Try to preserve some state across restarts.
+persist-key
+persist-tun
+
+# If you are connecting through an
+# HTTP proxy to reach the actual OpenVPN
+# server, put the proxy server/IP and
+# port number here.  See the man page
+# if your proxy server requires
+# authentication.
+;http-proxy-retry # retry on connection failures
+;http-proxy [proxy server] [proxy port #]
+
+# Wireless networks often produce a lot
+# of duplicate packets.  Set this flag
+# to silence duplicate packet warnings.
+;mute-replay-warnings
+
+# SSL/TLS parms.
+# See the server config file for more
+# description.  It's best to use
+# a separate .crt/.key file pair
+# for each client.  A single ca
+# file can be used for all clients.
+#ca ca.crt
+#cert client.crt
+#key client.key
+
+# Verify server certificate by checking that the
+# certicate has the correct key usage set.
+# This is an important precaution to protect against
+# a potential attack discussed here:
+#  http://openvpn.net/howto.html#mitm
+#
+# To use this feature, you will need to generate
+# your server certificates with the keyUsage set to
+#   digitalSignature, keyEncipherment
+# and the extendedKeyUsage to
+#   serverAuth
+# EasyRSA can do this for you.
+remote-cert-tls server
+cipher AES-128-CBC
+auth SHA256
+key-direction 1
+# If a tls-auth key is used on the server
+# then every client must also have the key.
+;tls-auth ta.key 1
+
+# Select a cryptographic cipher.
+# If the cipher option is used on the server
+# then you must also specify it here.
+;cipher x
+
+# Enable compression on the VPN link.
+# Don't enable this unless it is also
+# enabled in the server config file.
+comp-lzo
+
+# Set log file verbosity.
+verb 3
+
+# Silence repeating messages
+;mute 20
+# script-security 2
+# up /etc/openvpn/update-resolv-conf
+# down /etc/openvpn/update-resolv-conf
+<ca>
+-----BEGIN CERTIFICATE-----
+MIIEzTCCA7WgAwIBAgIJALaiGezUu1SIMA0GCSqGSIb3DQEBCwUAMIGfMQswCQYD
+VQQGEwJJTjELMAkGA1UECBMCSU4xEjAQBgNVBAcTCUh5ZGVyYWJhZDEMMAoGA1UE
+ChMDSHlkMR0wGwYDVQQLExRNeU9yZ2FuaXphdGlvbmFsVW5pdDEPMA0GA1UEAxMG
+SHlkIENBMQ8wDQYDVQQpEwZzZXJ2ZXIxIDAeBgkqhkiG9w0BCQEWEWFkbWluQGZh
+dGhhbmkub3JnMB4XDTE4MTIwMzA0MTQ1MFoXDTI4MTEzMDA0MTQ1MFowgZ8xCzAJ
+BgNVBAYTAklOMQswCQYDVQQIEwJJTjESMBAGA1UEBxMJSHlkZXJhYmFkMQwwCgYD
+VQQKEwNIeWQxHTAbBgNVBAsTFE15T3JnYW5pemF0aW9uYWxVbml0MQ8wDQYDVQQD
+EwZIeWQgQ0ExDzANBgNVBCkTBnNlcnZlcjEgMB4GCSqGSIb3DQEJARYRYWRtaW5A
+ZmF0aGFuaS5vcmcwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCyPX5C
+O2R2afuBVaZ/+dsRIqzopK7tB08kZzfybNoJaFaap8vNK1KY4mOXioTM2ZdjMjo0
+ujpTyc7lZvFWVq6E/GBu5fHXCA9dXyQCpKbKvG9VDeuE3jWVANkB5lFzMqSlOj2/
+ERmAmns16WTEEi1h6a7FZMQmbFZaqc/NTNHKO3BHX7+2HhqyWCKWZHvi4GzIqeTn
+B+Wv/DZYeybcfb7E9x/TlOUmQVpHniFTrkkkznepQDTESh8kguNRbzoZPcB/GLfu
+kysa+m2IKMjzKmQscjuZSEwgumgE+PT1RAkhVnUN9e/hVxFrOrM8PoHRjWmgpPaL
+sA9vjyuhnRJpZCQzAgMBAAGjggEIMIIBBDAdBgNVHQ4EFgQUZpP7nFvmKDN/tKMK
+T+WSgOzty7IwgdQGA1UdIwSBzDCByYAUZpP7nFvmKDN/tKMKT+WSgOzty7KhgaWk
+gaIwgZ8xCzAJBgNVBAYTAklOMQswCQYDVQQIEwJJTjESMBAGA1UEBxMJSHlkZXJh
+YmFkMQwwCgYDVQQKEwNIeWQxHTAbBgNVBAsTFE15T3JnYW5pemF0aW9uYWxVbml0
+MQ8wDQYDVQQDEwZIeWQgQ0ExDzANBgNVBCkTBnNlcnZlcjEgMB4GCSqGSIb3DQEJ
+ARYRYWRtaW5AZmF0aGFuaS5vcmeCCQC2ohns1LtUiDAMBgNVHRMEBTADAQH/MA0G
+CSqGSIb3DQEBCwUAA4IBAQAtJ3ehCO49R+DyZS1lnrrXQun0Dh7ORsilT8rkJsl8
+ATYrH8FIp4ozBvjeYQPxVe4WFuQpSmt66W7bYBywYwI8g4Yy3D+7QpteVepZW1H7
+N1TzOJAVM2xfayfx22y6aBj1ZcLp+7WtgPRslFwn108+DfrQQ4aJktvpNLsFEwqg
+RAqyYj7gtikB/LOCkM5Bwudf3hQwaFwuwPUMk0EIZQ5HBJ9N3K2cKAe838z/YIly
+VVcguLc5qUj7UpeNVgGLmGH1TVIwFaM8rUx0BCkO2WAFonRWpHgk8am484Tn3Qr0
+YnMekq6GbRLsOBncMmNvh7cCWzy4GlXyazQmylRTN0pR
+-----END CERTIFICATE-----
+</ca>
+<cert>
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 2 (0x2)
+    Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=IN, ST=IN, L=Hyderabad, O=Hyd, OU=MyOrganizationalUnit, CN=Hyd CA/name=server/emailAddress=admin@fathani.org
+        Validity
+            Not Before: Dec  3 04:20:02 2018 GMT
+            Not After : Nov 30 04:20:02 2028 GMT
+        Subject: C=IN, ST=IN, L=Hyderabad, O=Hyd, OU=MyOrganizationalUnit, CN=client1/name=server/emailAddress=admin@fathani.org
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:eb:02:0f:4b:0d:74:d9:e6:96:96:91:ff:d5:c6:
+                    f3:48:b4:7d:29:b9:8b:61:e8:8e:8c:32:1c:a6:3b:
+                    a3:ad:84:29:f4:18:ba:d4:19:9c:73:72:d4:f6:88:
+                    15:bf:13:b4:0e:21:b8:16:65:42:82:ef:7a:67:43:
+                    0b:ae:6c:09:02:7f:a8:28:22:93:86:2b:81:9d:fa:
+                    2f:1f:53:12:99:ef:50:2c:cd:24:4b:fd:7a:d8:36:
+                    08:4e:ec:1a:61:fc:74:dc:d8:4c:60:ab:fa:a0:a6:
+                    d9:4e:28:3c:83:23:5f:e1:bc:50:43:af:e8:69:fd:
+                    0e:94:1b:8c:1e:35:e7:42:8c:aa:54:33:38:27:39:
+                    78:89:14:e7:02:ed:b5:1d:d8:67:de:a9:d3:4b:9d:
+                    43:b5:87:d2:1e:4e:4c:c4:aa:79:2c:88:f4:5e:d9:
+                    cb:ae:40:ce:12:e9:6d:05:c6:b4:0d:45:bc:66:e8:
+                    c8:76:dc:b4:3d:5e:72:15:23:8c:3b:01:76:3b:b3:
+                    18:7b:1b:1c:d1:4d:3e:47:75:cd:a8:52:f8:74:8f:
+                    2a:ca:86:45:d0:c5:3b:fd:4c:f1:f7:a3:ff:55:d7:
+                    83:29:6f:fd:74:47:06:91:57:31:56:9a:27:36:16:
+                    08:bb:99:43:9a:cc:77:e8:d7:0d:61:eb:a4:66:47:
+                    c0:81
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            Netscape Comment: 
+                Easy-RSA Generated Certificate
+            X509v3 Subject Key Identifier: 
+                FA:C1:25:ED:39:AA:85:7B:87:36:44:C9:2C:98:85:CD:3F:BF:97:EE
+            X509v3 Authority Key Identifier: 
+                keyid:66:93:FB:9C:5B:E6:28:33:7F:B4:A3:0A:4F:E5:92:80:EC:ED:CB:B2
+                DirName:/C=IN/ST=IN/L=Hyderabad/O=Hyd/OU=MyOrganizationalUnit/CN=Hyd CA/name=server/emailAddress=admin@fathani.org
+                serial:B6:A2:19:EC:D4:BB:54:88
+
+            X509v3 Extended Key Usage: 
+                TLS Web Client Authentication
+            X509v3 Key Usage: 
+                Digital Signature
+            X509v3 Subject Alternative Name: 
+                DNS:client1
+    Signature Algorithm: sha256WithRSAEncryption
+         a7:12:dc:62:a0:61:6c:98:93:c6:4c:30:59:d4:3a:f7:06:3e:
+         17:a5:1b:99:30:87:85:eb:4c:38:e5:55:a9:d0:8a:4e:6c:bc:
+         bb:d1:bd:85:fd:8c:10:11:35:8d:2c:7c:57:a1:a0:8d:01:ee:
+         78:ff:c6:75:13:af:e1:5c:4b:fa:29:c9:29:2b:5a:b2:f5:73:
+         ef:ad:39:14:82:ae:76:a3:c1:28:bc:97:81:ef:08:fd:cb:8c:
+         d9:27:81:0b:75:4a:96:93:21:ff:eb:bc:d1:d9:9e:be:9c:c4:
+         ce:2f:1b:45:50:23:22:01:34:6f:d1:89:b6:a2:32:b9:40:b3:
+         69:46:f9:a1:4b:1e:8d:5d:99:2c:54:f4:6e:85:16:77:9a:46:
+         4b:8e:ff:a1:56:07:bd:07:e2:95:72:dc:79:ca:d3:51:c2:52:
+         f7:da:a2:e1:ea:c5:0d:21:99:89:5a:80:91:4c:ca:5c:18:18:
+         b1:35:88:d2:2a:2b:27:5f:e0:bb:c7:4d:9c:60:02:de:eb:f6:
+         ae:e5:5e:49:b6:69:ed:d4:81:4f:ef:aa:bf:33:67:81:e7:96:
+         02:f8:27:8e:25:46:9b:e4:85:90:1a:a4:44:0a:84:17:71:1d:
+         12:33:69:76:10:2b:48:a6:46:e2:c5:4a:c7:4c:c8:41:5a:67:
+         b4:17:ba:e7
+-----BEGIN CERTIFICATE-----
+MIIFKDCCBBCgAwIBAgIBAjANBgkqhkiG9w0BAQsFADCBnzELMAkGA1UEBhMCSU4x
+CzAJBgNVBAgTAklOMRIwEAYDVQQHEwlIeWRlcmFiYWQxDDAKBgNVBAoTA0h5ZDEd
+MBsGA1UECxMUTXlPcmdhbml6YXRpb25hbFVuaXQxDzANBgNVBAMTBkh5ZCBDQTEP
+MA0GA1UEKRMGc2VydmVyMSAwHgYJKoZIhvcNAQkBFhFhZG1pbkBmYXRoYW5pLm9y
+ZzAeFw0xODEyMDMwNDIwMDJaFw0yODExMzAwNDIwMDJaMIGgMQswCQYDVQQGEwJJ
+TjELMAkGA1UECBMCSU4xEjAQBgNVBAcTCUh5ZGVyYWJhZDEMMAoGA1UEChMDSHlk
+MR0wGwYDVQQLExRNeU9yZ2FuaXphdGlvbmFsVW5pdDEQMA4GA1UEAxMHY2xpZW50
+MTEPMA0GA1UEKRMGc2VydmVyMSAwHgYJKoZIhvcNAQkBFhFhZG1pbkBmYXRoYW5p
+Lm9yZzCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAOsCD0sNdNnmlpaR
+/9XG80i0fSm5i2HojowyHKY7o62EKfQYutQZnHNy1PaIFb8TtA4huBZlQoLvemdD
+C65sCQJ/qCgik4YrgZ36Lx9TEpnvUCzNJEv9etg2CE7sGmH8dNzYTGCr+qCm2U4o
+PIMjX+G8UEOv6Gn9DpQbjB4150KMqlQzOCc5eIkU5wLttR3YZ96p00udQ7WH0h5O
+TMSqeSyI9F7Zy65AzhLpbQXGtA1FvGboyHbctD1echUjjDsBdjuzGHsbHNFNPkd1
+zahS+HSPKsqGRdDFO/1M8fej/1XXgylv/XRHBpFXMVaaJzYWCLuZQ5rMd+jXDWHr
+pGZHwIECAwEAAaOCAWowggFmMAkGA1UdEwQCMAAwLQYJYIZIAYb4QgENBCAWHkVh
+c3ktUlNBIEdlbmVyYXRlZCBDZXJ0aWZpY2F0ZTAdBgNVHQ4EFgQU+sEl7TmqhXuH
+NkTJLJiFzT+/l+4wgdQGA1UdIwSBzDCByYAUZpP7nFvmKDN/tKMKT+WSgOzty7Kh
+gaWkgaIwgZ8xCzAJBgNVBAYTAklOMQswCQYDVQQIEwJJTjESMBAGA1UEBxMJSHlk
+ZXJhYmFkMQwwCgYDVQQKEwNIeWQxHTAbBgNVBAsTFE15T3JnYW5pemF0aW9uYWxV
+bml0MQ8wDQYDVQQDEwZIeWQgQ0ExDzANBgNVBCkTBnNlcnZlcjEgMB4GCSqGSIb3
+DQEJARYRYWRtaW5AZmF0aGFuaS5vcmeCCQC2ohns1LtUiDATBgNVHSUEDDAKBggr
+BgEFBQcDAjALBgNVHQ8EBAMCB4AwEgYDVR0RBAswCYIHY2xpZW50MTANBgkqhkiG
+9w0BAQsFAAOCAQEApxLcYqBhbJiTxkwwWdQ69wY+F6UbmTCHhetMOOVVqdCKTmy8
+u9G9hf2MEBE1jSx8V6GgjQHueP/GdROv4VxL+inJKStasvVz7605FIKudqPBKLyX
+ge8I/cuM2SeBC3VKlpMh/+u80dmevpzEzi8bRVAjIgE0b9GJtqIyuUCzaUb5oUse
+jV2ZLFT0boUWd5pGS47/oVYHvQfilXLcecrTUcJS99qi4erFDSGZiVqAkUzKXBgY
+sTWI0iorJ1/gu8dNnGAC3uv2ruVeSbZp7dSBT++qvzNngeeWAvgnjiVGm+SFkBqk
+RAqEF3EdEjNpdhArSKZG4sVKx0zIQVpntBe65w==
+-----END CERTIFICATE-----
+</cert>
+<key>
+-----BEGIN PRIVATE KEY-----
+MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDrAg9LDXTZ5paW
+kf/VxvNItH0puYth6I6MMhymO6OthCn0GLrUGZxzctT2iBW/E7QOIbgWZUKC73pn
+QwuubAkCf6goIpOGK4Gd+i8fUxKZ71AszSRL/XrYNghO7Bph/HTc2Exgq/qgptlO
+KDyDI1/hvFBDr+hp/Q6UG4weNedCjKpUMzgnOXiJFOcC7bUd2GfeqdNLnUO1h9Ie
+TkzEqnksiPRe2cuuQM4S6W0FxrQNRbxm6Mh23LQ9XnIVI4w7AXY7sxh7GxzRTT5H
+dc2oUvh0jyrKhkXQxTv9TPH3o/9V14Mpb/10RwaRVzFWmic2Fgi7mUOazHfo1w1h
+66RmR8CBAgMBAAECggEAb2uqlIrsu+L3wqu2AEUzU2U/cmjmDKWV8CJSMv5TvBDN
+U03mRmleI95t2fTrWoyc8ZZLEVMxFaM1BYBkKW5PVz/vGhhKmXJHIf9cGB3q09EC
+0jrw2pZzh88WYVTPrWVkgtCKZcskKMbygHvTNNmwu/XsmCruplG0d8QXyrsDyii+
+Yb22Nu2mM9fiu8eXGDucw9tqAg084xqvdrtYKyj9IrflymN1ukvbmhC4XoOpvkSq
+kOQ/vKkEcjWb/tnV6TelVD08tgpstsjFXG6QzAUfJtQlr5oCrT73xYfE6htmKF3D
+UH6s706BT1/b28Ey10FrhcN8Ycb1cjGDs5Avn3lzgQKBgQD9p/NaxOPjzrxm2W4l
+j2guaAe3EGBqkGUNJAwzKenW+vHdLyoiVxuSVZyDzJa1NcrUr24qJ0fmpBSMltKA
+c32SgzTMfppSMHvBgcKG8FoYdjaOMgXTsNESALXH5u1fpP+rqAioKoiA06rAU2IQ
+ULg4R/v6XlatavjXvemyWkU7iwKBgQDtLf7PgSYl/AJdueQeMLClCQVj9sMNedXl
+QzLzDwK9hDOgQ2ImEDYwnha2Ntjsol5bzo7IORloZe09Ye03hPb7nVES4UnuNd1i
+Geca/4DS+fgDpno7OgqIVbTex2rSzppQ7b7ifKpZM8b6JP1wmQGD72d8E5FITp46
+FK8ibb9lowKBgQDY3CQEMFydQPx1+eJfnlF1i189NXUY5kZei7kabPUM5RKvBUnC
+fjKGU0cyr1ERr+GvICTRSTABkbo30CI7y4FKJ36Wbo7FQcosUCHdd9OvIjHWNBIj
+QAIeoBjJxTagFNK5EToFfAekDFLphuBKDpjRFUnqbYkxTkldOXJ5FxAlrQKBgQCo
+lbPz3JG4GBu6cSIzT1qPxAy/1Csqjfo6fnxdhcLl4G0tshe2hHlwLz5ngC7KbFLz
+oKuep+9mZGSv58ZMW0eO63AwIlCBcGoOi+jYKNpxm9ntBk0FgijwZTMt0sMcWlwX
+wBWZORGAXCxHqzk16pvIIsgEyofOxIr1L7SYnTeZTwKBgC4f5zPoC/N2x3CuwG//
+Kt6Fzu/nkW3LFtS5y4aE5DhhtQcGR2zJ6rzAMKRItU40bv2M1dFg/RhD33u4aGRV
+3L9gE6r+oE4Gy8umoGwCMT667jkDwZOFPQiJFNoX6Jn780hfOlL7TKwlx0r0wbuy
+/tnVfueiAxIUKu2igOncII/a
+-----END PRIVATE KEY-----
+</key>
+<tls-auth>
+#
+# 2048 bit OpenVPN static key
+#
+-----BEGIN OpenVPN Static key V1-----
+ecf58092eb94b6904530b4dfa00e0eb5
+9241375af55560215ccea7fe907d3158
+3436bdb035737d5c67d98d85282a6d65
+7affbc5b4f833f99b353a142fe4cd6fd
+f4a5ab9389aa3a25f89c771d4491e9ee
+853465bc3e5d4edf0b7703042971c410
+1bc9ca4f6b96ce6afbea481633d54edb
+c16295b56bb154fa4e3cc29a4185853c
+1b6e8c409b8816afe3f7fd7fa2a7e891
+55ce8b856c9f1389c6c4c7c5fe529207
+1a80f250bdb72f53ba3016f5d1925826
+bb5e097df76043d7913be31b82c75064
+b51e2ccfb0e3e42db4393bfba8804394
+e2b160d560fc92ffdf0e49f32607fe2f
+ab59f957c2e8b03eda87dad78f31be44
+6ce775852da964d8118162d5d197af05
+-----END OpenVPN Static key V1-----
+</tls-auth>

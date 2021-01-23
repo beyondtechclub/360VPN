@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">360 VPN</string>
+    <string name="no_vpn_connected">حالة VPN: غير متصل</string>
+    <string name="prompt_spinner">اختر موقعا</string>
+    <string name="connect">الاتصال</string>
+    <string name="disconnect">قطع الاتصال</string>
+
+    <string name="connected">متصل</string>
+    <string name="disconnected">انقطع الاتصال</string>
+    <string name="select_vpn_location">حدد المنطقة التي تريد توصيلها</string>
+    <string name="facebook_app_id">2146300222353523</string>
+
+    <string name="search">ابحث هنا عن المنطقة....</string>
+    <string name="title_activity_navigation">نشاط الملاحة</string>
+    <string name="navigation_drawer_open">افتح درج التنقل</string>
+    <string name="navigation_drawer_close">إغلاق درج التنقل</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">رأس التنقل</string>
+    <string name="action_settings">الإعدادات</string>
+
+    <string name="menu_home">HideMe</string>
+    <string name="menu_gallery">صالة عرض</string>
+    <string name="menu_slideshow">عرض الشرائح</string>
+    <string name="menu_tools">أدوات</string>
+    <string name="menu_share">شارك</string>
+    <string name="menu_send">إرسال</string>
+    <string name="privacy">خصوصية</string>
+    <string name="rate">معدل</string>
+    <string name="home">360 VPN</string>
+
+    <string name="drawer_open">افتح درج التنقل</string>
+    <string name="drawer_close">إغلاق درج التنقل</string>
+    <string name="logo_inapp_link">https://github.com/librespeed/speedtest-android</string>
+
+    <string name="privacy_policy">file:///android_asset/privacy_en.html</string>
+
+
+    <string name="init_init">جار التحميل</string>
+    <string name="initFail_configError">خطأ في الاعداد</string>
+    <string name="initFail_retry">أعد المحاولة</string>
+    <string name="init_selecting">اختيار الخادم</string>
+    <string name="initFail_noServers">لا توجد خوادم متاحة</string>
+    <string name="serverSelect_message">تحديد الخادم</string>
+    <string name="start">بداية</string>
+    <string name="test_dl">تحميل</string>
+    <string name="test_ul">رفع</string>
+    <string name="test_speedMeasure">ميغابت في الثانية</string>
+    <string name="test_ping">بنغ</string>
+    <string name="test_jitter">تقطع</string>
+    <string name="test_timeMeasure">ملي ثانية</string>
+    <string name="test_share">مشاركة النتيجة</string>
+    <string name="test_restart">اختبار جديد</string>
+    <string name="testFail_err">حدث خطأ</string>
+    <string name="testFail_retry">حاول مجددا</string>
+    <string name="privacy_open"><u>خصوصية</u></string>
+    <string name="privacy_close"><u>عودة</u></string>
+    <string name="speed_test">اختبار السرعة</string>
+    <string name="lang">لغة</string>
+    <string name="auto_connect_to_fastest_server">الاتصال التلقائي بخادم أسرع</string>
+    <string name="begin_test_speedtest">بدء الاختبار</string>
+    <string name="download_speedtest">تحميل</string>
+    <string name="upload_speedtest">رفع</string>
+    <string name="downloadspeed_speedtest">0 Mbps</string>
+    <string name="uploadspeed_speedtest">0 Mbps</string>
+    <string name="ping_speedtest">بينغ</string>
+    <string name="app_by_inceptial">APP BY INCEPTIAL</string>
+    <string name="test_country">test</string>
+    <string name="austrailia_country">أستراليا</string>
+    <string name="canada_country">كندا</string>
+    <string name="dubai_country">دبي</string>
+    <string name="england_country">إنكلترا</string>
+    <string name="france_country">فرنسا</string>
+    <string name="germany_country">ألمانيا</string>
+    <string name="hongkong_country">هونج كونج</string>
+    <string name="india_country">الهند</string>
+    <string name="ireland_country">أيرلندا</string>
+    <string name="italy_country">إيطاليا</string>
+    <string name="japan_country">اليابان</string>
+    <string name="netherlands_country">هولندا</string>
+    <string name="russia_country">روسيا</string>
+    <string name="singapore_country">سنغافورة</string>
+    <string name="southafrica_country">جنوب أفريقيا</string>
+    <string name="southkorea_country">كوريا الجنوبية</string>
+    <string name="usa_country">أمريكا</string>
+    <string name="or_text">أو</string>
+    <string name="autoconnect_button">الاتصال بخادم أسرع</string>
+
+    <string name="rate_us_title">قيمنا</string>
+    <string name="rateus_message">إذا كنت تستمتع باستخدام التطبيق ، فهل تمانع في تخصيص بعض الوقت لتقييمه في المتجر؟</string>
+    <string name="rateus_yes">نعم</string>
+    <string name="rateus_later">في وقت لاحق</string>
+    <string name="defauldialog_title">المنطقة الافتراضية</string>
+    <string name="default_message">تريد تعيين هذا كمنطقتك الافتراضية</string>
+    <string name="default_yes">نعم</string>
+    <string name="default_no">لا</string>
+    <string name="reward_title">فتح المنطقة</string>
+    <string name="reward_message">فتح المنطقة لمدة 24 ساعة من خلال عرض الإعلان.</string>
+    <string name="reward_yes">نعم</string>
+    <string name="reward_no">لا</string>
+    <string name="default_make">إفتراضي</string>
+    <string name="make_default">جعل الافتراضي</string>
+    <string name="camera_scanner">الماسح الضوئي بالكاميرا</string>
+    <string name="secure_gallery">معرض آمن</string>
+    <string name="aman_2fa">أمان: 2 ف أ</string>
+    <string name="our_other_apps">تطبيقاتنا الأخرى</string>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#909090</color>
+    <color name="colorPrimaryDark">#909090</color>
+    <color name="colorAccent">#FFB44F</color>
+    <color name="Grey">#909090</color>
+    <color name="gaugesBackground">#AA6060</color>
+    <color name="progressBackground">#BF360C</color>
+    <color name="progressColor">#AAAAAA</color>
+    <color name="dlGauge">#FFFF00</color>
+    <color name="White">#FFFF</color>
+
+
+</resources>

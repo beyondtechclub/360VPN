@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?><!--<menu xmlns:android="http://schemas.android.com/apk/res/android"-->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/ic_share_nav"
+            android:title="@string/menu_share" />
+        <item
+            android:id="@+id/nav_privacy"
+            android:icon="@drawable/ic_policy"
+            android:title="@string/privacy" />
+
+        <item
+            android:id="@+id/nav_rate"
+            android:icon="@drawable/ic_rate_nav"
+            android:title="@string/rate" />
+
+        <item
+            android:id="@+id/nav_speed_test"
+            android:icon="@drawable/ic_speed_nav"
+            android:title="@string/speed_test"
+            />
+
+        <item
+            android:id="@+id/lang"
+            android:icon="@drawable/ic_language_icon"
+            android:title="@string/lang" />
+
+    </group>
+
+
+
+
+</menu>
